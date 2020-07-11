@@ -1,16 +1,19 @@
 package xUnitTDD;
 
-public class WasRun {
+public class WasRun extends TestCase {
 	
 	private boolean wasRun;
 	
-	public void run() {
+	public WasRun(String testMethodName) {
+		super(testMethodName);
+	}
+	
+	public void executeWasRun() {
 		this.wasRun = true;
 	}
 
-	public void assertEquals(boolean wasRun) {
-		if(this.wasRun!=wasRun)
-			throw new AssertionError("expected: <"+wasRun+"> but actual <"+this.wasRun+">");
+	public boolean isWasRun() {
+		return wasRun;
 	}
 
 }

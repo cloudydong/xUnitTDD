@@ -2,9 +2,9 @@ package xUnitTDD;
 
 public class XUnitEx {
 	public static void main(String[] args) {
-		WasRun wasRun = new WasRun();
-		wasRun.assertEquals(false);
+		WasRun wasRun = new WasRun("executeWasRun");
+		Assert.assertEquals(wasRun.isWasRun(), false);
 		wasRun.run();
-		wasRun.assertEquals(true);
+		Assert.assertEquals(wasRun.isWasRun(), true);
 	}
 }
