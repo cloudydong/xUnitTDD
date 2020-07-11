@@ -7,7 +7,7 @@
 
 [X] TestCaseTest 
 
-[] SetUp
+[X] SetUp
 
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
@@ -26,3 +26,8 @@
   * 조건: TestCase를 상속한 테스트를 만들어 본다.
   * 결과: 메인에 있던 실행여부를 확인하는 모듈을 테스트하는 TestCaseTest 객체의 testRunning을 테스트? 
   * 문제: 이제 템플릿 패턴을 만들었기에 쉽게 메소드 사이사이에 원하는 메소드를 끼어 넣을 수 있음 setUp과 tearDown 만들기
+   
+* SetUp
+  * 조건: SetUp과 TearDown을 TestCase템플릿에 만들어 본다.
+  * 결과: TestCase에 SetUp과 TearDown을 만들고 TestCaseTest에 TestSetUp과 TestTearDown을 만들어 테스트했다. 각각 독립적인 인스턴스를 갖는 테스트였다.
+  * 문제: WasRun의 상태가 setUP, wasRun, tearDown 3개가 되었고 각각 get메소드가 생겼다. 실행순서여부를 확인할 수 없고, 상태는 하나로 묶어서 전달할 필요가 있으며 중복코드는 제거해야한다.
