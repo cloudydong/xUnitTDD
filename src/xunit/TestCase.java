@@ -11,11 +11,19 @@ public class TestCase {
 	}
 
 	public void run() {
+		setUp();
 		try {
 			Method method = getClass().getMethod(testMethodName);
 			method.invoke(this);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		tearDown();
+	}
+
+	public void setUp() {
+	}
+
+	public void tearDown() {
 	}
 }

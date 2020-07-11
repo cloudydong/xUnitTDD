@@ -12,4 +12,18 @@ public class TestCaseTest extends TestCase {
 		wasRun.run();
 		Assert.assertEquals(wasRun.WasRun(), true);
 	}
+	
+	public void testSetUp() {
+		WasRun wasRun = new WasRun("executeWasRun");
+		Assert.assertEquals(wasRun.getSetUp(), false);
+		wasRun.run();
+		Assert.assertEquals(wasRun.getSetUp(), true);
+	}
+	
+	public void testTearDown() {
+		WasRun wasRun = new WasRun("executeWasRun");
+		Assert.assertEquals(wasRun.getTearDown(), false);
+		wasRun.run();
+		Assert.assertEquals(wasRun.getTearDown(), true);
+	}
 }
