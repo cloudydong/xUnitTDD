@@ -5,9 +5,9 @@
 
 [X] TestCase
 
-[] TestCaseTest 
+[X] TestCaseTest 
 
-[] 
+[] SetUp
 
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
@@ -21,3 +21,8 @@
    * 조건: 동적으로 실행
    * 결과: WasRun은 실행상태만 변화하는 클래스, Assert는 실행여부 확인하는 클래스, TestCase는 동적으로 메소드를 실행하는 클래스 그리고 템플릿 패턴이 됨
    * 문제: main에 기능별로 메소드가 잘 분리됨 이제 그걸로 TestCase를 테스트해야함
+   
+* TestCaseTest
+  * 조건: TestCase를 상속한 테스트를 만들어 본다.
+  * 결과: 메인에 있던 실행여부를 확인하는 모듈을 테스트하는 TestCaseTest 객체의 testRunning을 테스트? 
+  * 문제: 이제 템플릿 패턴을 만들었기에 쉽게 메소드 사이사이에 원하는 메소드를 끼어 넣을 수 있음 setUp과 tearDown 만들기
