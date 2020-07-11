@@ -5,7 +5,7 @@
 
 [X] TestCase
 
-[] 
+[] TestCaseTest 
 
 [] 
 
