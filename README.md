@@ -9,7 +9,7 @@
 
 [X] SetUp
 
-[X] refactor:WasRun
+[X] refactorWasRun
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
@@ -32,3 +32,8 @@
   * 조건: SetUp과 TearDown을 TestCase템플릿에 만들어 본다.
   * 결과: TestCase에 SetUp과 TearDown을 만들고 TestCaseTest에 TestSetUp과 TestTearDown을 만들어 테스트했다. 각각 독립적인 인스턴스를 갖는 테스트였다.
   * 문제: WasRun의 상태가 setUP, wasRun, tearDown 3개가 되었고 각각 get메소드가 생겼다. 실행순서여부를 확인할 수 없고, 상태는 하나로 묶어서 전달할 필요가 있으며 중복코드는 제거해야한다.
+  
+* refactorWasRun
+  * 조건: WasRun의 상태를 하나로 합치고 상태에 순서를 부여한다.
+  * 결과: 상태를 List로 만들고 List에 메소드명을 add 했다.
+  * 문제: List로 괜찮은가? 순서+실행여부를 확인하는 객체가 필요하다. 그리고 메소드명을 add하는 작업이 중복된다.
