@@ -8,8 +8,8 @@ public class TestCaseTest extends TestCase {
 
 	public void testRunning() {
 		WasRun wasRun = new WasRun("executeWasRun");
-		Assert.assertEquals(wasRun.isWasRun(), false);
+		Assert.assertEquals(wasRun.WasRun(), false);
 		wasRun.run();
-		Assert.assertEquals(wasRun.isWasRun(), true);
+		Assert.assertEquals(wasRun.WasRun(), true);
 	}
 }

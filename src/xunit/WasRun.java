@@ -12,7 +12,7 @@ public class WasRun extends TestCase {
 		this.wasRun = true;
 	}
 
-	public boolean isWasRun() {
+	public boolean WasRun() {
 		return wasRun;
 	}
 }
