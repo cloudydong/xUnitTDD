@@ -7,9 +7,9 @@
 
 [X] TestCaseTest 
 
-[X] SetUp refactor
+[X] SetUp
 
-[X] refactor WasRun
+[X] refactor:WasRun
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
