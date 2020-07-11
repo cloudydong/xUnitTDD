@@ -1,38 +1,30 @@
 package xunit;
 
-public class WasRun extends TestCase {
+import java.util.ArrayList;
+import java.util.List;
 
-	private boolean wasRun;
-	private boolean setUp;
-	private boolean tearDown;
+public class WasRun extends TestCase {
+	private List<String> logList = new ArrayList<String>();
 
 	public WasRun(String testMethodName) {
 		super(testMethodName);
 	}
 
-	public void executeWasRun() {
-		this.wasRun = true;
+	public List<String> getRunLogList() {
+		return logList;
 	}
 
-	public boolean WasRun() {
-		return wasRun;
+	public void executeWasRun() {
+		logList.add("executeWasRun");
 	}
-	
-	public boolean getSetUp() {
-		return setUp;
-	}
-	
-	public boolean getTearDown() {
-		return tearDown;
-	}
-	
+
 	@Override
 	public void setUp() {
-		this.setUp = true;
+		logList.add("setUp");
 	}
-	
+
 	@Override
 	public void tearDown() {
-		this.tearDown = true;
+		logList.add("tearDown");
 	}
 }
