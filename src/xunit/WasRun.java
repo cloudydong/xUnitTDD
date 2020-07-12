@@ -1,30 +1,27 @@
 package xunit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class WasRun extends TestCase {
-	private List<String> logList = new ArrayList<String>();
+	private MethodLog methodLog = new MethodLog();
 
 	public WasRun(String testMethodName) {
 		super(testMethodName);
 	}
 
-	public List<String> getRunLogList() {
-		return logList;
+	public MethodLog getMethodLog() {
+		return methodLog;
 	}
 
 	public void executeWasRun() {
-		logList.add("executeWasRun");
+		methodLog.addCurrentMethodName();
 	}
 
 	@Override
 	public void setUp() {
-		logList.add("setUp");
+		methodLog.addCurrentMethodName();
 	}
 
 	@Override
 	public void tearDown() {
-		logList.add("tearDown");
+		methodLog.addCurrentMethodName();
 	}
 }
