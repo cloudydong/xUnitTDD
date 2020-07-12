@@ -10,6 +10,8 @@
 [X] SetUp
 
 [X] refactorWasRun
+
+[X] MethodLogv1 && MethodLogv2
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
