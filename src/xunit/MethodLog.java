@@ -22,8 +22,7 @@ public class MethodLog {
 		this.logList = logList;
 	}
 
-	public void addCurrentMethodName() {
-		String currentMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+	public void addCurrentMethodName(String currentMethodName) {
 		logList.add(currentMethodName);
 	}
 }
