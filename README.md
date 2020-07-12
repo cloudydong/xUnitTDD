@@ -12,6 +12,10 @@
 [X] refactorWasRun
 
 [X] MethodLogv1 && MethodLogv2
+
+[X] stopWatchWasRun
+
+[] TestResult
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
@@ -43,9 +47,13 @@
 * MethodLogv1 && MethodLogv2
   * 조건: 순서와 실행여부를 확인하는 객체를 만든다. add작업을 바꾼다.
   * 결과: 실행한 메소드 이름을 담는 객체 MethodLog를 만들었다. MethodLog는 addCurrentMethodName라는 메소드를 가지고 있어 실행한 메소드 이름을 자신이 갖고있는 리스트에 추가한다.
-  * 문제: 실행한 메소드 이름을 받는법은 2가지이다. String currentMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 와 String currentMethodName = Thread.currentThread().getStackTrace()[2].getMethodName(); 이 두가지 이다. 두 방법은 성능차이를 보일것 같다. 이것은 테스트 해봐야 안다.
+  * 문제: 실행한 메소드 이름을 받는법은 2가지이다. String currentMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 와 String currentMethodName = Thread.currentThread().getStackTrace()[1].getMethodName(); 이 두가지 이다. 두 방법은 성능차이를 보일것 같다. 이것은 테스트 해봐야 안다.
   
-  
+* stopWatchWasRun
+  * 조건: 메소드 이름 받는법 2가지를 속도로 비교한다.
+  * 결과: MethodLogv1이 두배 느렸다. MethodLog2의 또 다른 장점은 addCurrentMethodName안 getStackTrace()[2] 로 바꾸면 내부로 넘겨서 생략할수 있다.
+  * 문제: 이제 본래의 목적인 테스트 결과 출력하기를 만들자.
+   
   
   
   
