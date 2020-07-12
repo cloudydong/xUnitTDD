@@ -15,7 +15,7 @@
 
 [X] stopWatchWasRun
 
-[] TestResult
+[X] TestResult
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
@@ -53,6 +53,11 @@
   * 조건: 메소드 이름 받는법 2가지를 속도로 비교한다.
   * 결과: MethodLogv1이 두배 느렸다. MethodLog2의 또 다른 장점은 addCurrentMethodName안 getStackTrace()[2] 로 바꾸면 내부로 넘겨서 생략할수 있다.
   * 문제: 이제 본래의 목적인 테스트 결과 출력하기를 만들자.
+
+* TestResult
+  * 조건: 테스트의 결과를 출력한다.
+  * 결과: 실행횟수랑 실패횟수를 출력한다.
+  * 문제: 계속 늘어나는 TestCaseTest의 메소드를 정리할 필요가 느껴진다.
    
   
   
