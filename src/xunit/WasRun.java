@@ -14,7 +14,7 @@ public class WasRun extends TestCase {
 	public void executeWasRun() {
 		methodLog.addCurrentMethodName();
 	}
-
+	
 	@Override
 	public void setUp() {
 		methodLog.addCurrentMethodName();

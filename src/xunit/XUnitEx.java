@@ -2,15 +2,10 @@ package xunit;
 
 public class XUnitEx {
 	public static void main(String[] args) {
-		new TestCaseTest("testTemplateMethod").run();
-		new TestCaseTest("stopWatchWasRun").run();
-		new TestCaseTest("stopWatchWasRun2").run();
-		new TestCaseTest("stopWatchWasRun").run();
-		new TestCaseTest("stopWatchWasRun1").run();
-		new TestCaseTest("stopWatchWasRun1").run();
-		new TestCaseTest("stopWatchWasRun1").run();
-		new TestCaseTest("stopWatchWasRun2").run();
-		new TestCaseTest("stopWatchWasRun").run();
-		new TestCaseTest("stopWatchWasRun2").run();
+		TestResult result = new TestResult();
+		new TestCaseTest("testTemplateMethod").run(result);
+		new TestCaseTest("testStopWatchWasRun").run(result);
+		new TestCaseTest("testTestResult").run(result);
+		new TestCaseTest("testFailedResultFormatting").run(result);
 	}
 }

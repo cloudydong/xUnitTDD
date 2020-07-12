@@ -7,47 +7,33 @@ public class TestCaseTest extends TestCase {
 	}
 
 	public void testTemplateMethod() {
+		TestResult result = new TestResult();
 		WasRun wasRun = new WasRun("executeWasRun");
-		wasRun.run();
+		wasRun.run(result);
 		Assert.assertEquals(wasRun.getMethodLog().getLogList(),
-				new MethodLogv2("setUp", "executeWasRun", "tearDown").getLogList());
+				new MethodLog("setUp", "executeWasRun", "tearDown").getLogList());
 	}
 	
-	public void testMethodLogv1() {
-		WasRun1 wasRun1 = new WasRun1("executeWasRun");
-		wasRun1.run();
-		Assert.assertEquals(wasRun1.getMethodLog().getLogList(),
-				new MethodLogv2("setUp", "executeWasRun", "tearDown").getLogList());
+	public void testTestResult() {
+		TestResult result = new TestResult();
+		WasRun wasRun = new WasRun("executeWasRun");
+		wasRun.run(result);
+		Assert.assertEquals("1 run, 0 failed", result.getSummary());
 	}
 	
-	public void testMethodLogv2() {
-		WasRun2 wasRun2 = new WasRun2("executeWasRun");
-		wasRun2.run();
-		Assert.assertEquals(wasRun2.getMethodLog().getLogList(),
-				new MethodLogv2("setUp", "executeWasRun", "tearDown").getLogList());
+	public void testFailedResultFormatting() {
+		TestResult result = new TestResult();
+		result.testStarted();
+		result.testFailed();
+		Assert.assertEquals("1 run, 1 failed", result.getSummary());
 	}
 	
-	public void stopWatchWasRun() {
+	public void testStopWatchWasRun() {
+		TestResult result = new TestResult();
 		long time = System.currentTimeMillis();
 		for(int i = 0; i<1000; i++)
-			new TestCaseTest("testTemplateMethod").run();
+			new WasRun("executeWasRun").run(result);
 		time = System.currentTimeMillis() - time;
-		System.out.println("WasRun: " + time);
-	}
-	
-	public void stopWatchWasRun1() {
-		long time = System.currentTimeMillis();
-		for(int i = 0; i<1000; i++)
-			new TestCaseTest("testMethodLogv1").run();
-		time = System.currentTimeMillis() - time;
-		System.out.println("WasRun1: " + time);
-	}
-	
-	public void stopWatchWasRun2() {
-		long time = System.currentTimeMillis();
-		for(int i = 0; i<1000; i++)
-			new TestCaseTest("testMethodLogv2").run();
-		time = System.currentTimeMillis() - time;
-		System.out.println("WasRun2: " + time);
+		System.out.println("WasRunX1000: " + time);
 	}
 }

@@ -10,12 +10,14 @@ public class TestCase {
 		this.testMethodName = testMethodName;
 	}
 
-	public void run() {
+	public void run(TestResult result) {
+		result.testStarted();
 		setUp();
 		try {
 			Method method = getClass().getMethod(testMethodName);
 			method.invoke(this);
 		} catch (Exception e) {
+			result.testFailed();
 			throw new RuntimeException(e);
 		}
 		tearDown();
