@@ -12,16 +12,16 @@ public class WasRun extends TestCase {
 	}
 
 	public void executeWasRun() {
-		methodLog.addCurrentMethodName(new Object() {}.getClass().getEnclosingMethod().getName());
+		methodLog.addCurrentMethodName();
 	}
 
 	@Override
 	public void setUp() {
-		methodLog.addCurrentMethodName(new Object() {}.getClass().getEnclosingMethod().getName());
+		methodLog.addCurrentMethodName();
 	}
 
 	@Override
 	public void tearDown() {
-		methodLog.addCurrentMethodName(new Object() {}.getClass().getEnclosingMethod().getName());
+		methodLog.addCurrentMethodName();
 	}
 }

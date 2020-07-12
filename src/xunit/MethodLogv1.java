@@ -3,13 +3,13 @@ package xunit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MethodLog {
+public class MethodLogv1 {
 	private List<String> logList = new ArrayList<String>();
 
-	public MethodLog() {
+	public MethodLogv1() {
 	}
 
-	public MethodLog(String... strings) {
+	public MethodLogv1(String... strings) {
 		for (String s : strings)
 			logList.add(s);
 	}
@@ -22,8 +22,7 @@ public class MethodLog {
 		this.logList = logList;
 	}
 
-	public void addCurrentMethodName() {
-		String currentMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+	public void addCurrentMethodName(String currentMethodName) {
 		logList.add(currentMethodName);
 	}
 }
