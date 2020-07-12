@@ -39,3 +39,13 @@
   * 조건: WasRun의 상태를 하나로 합치고 상태에 순서를 부여한다.
   * 결과: 상태를 List로 만들고 List에 메소드명을 add 했다.
   * 문제: List로 괜찮은가? 순서+실행여부를 확인하는 객체가 필요하다. 그리고 메소드명을 add하는 작업이 중복된다.
+  
+* MethodLogv1 && MethodLogv2
+  * 조건: 순서와 실행여부를 확인하는 객체를 만든다. add작업을 바꾼다.
+  * 결과: 실행한 메소드 이름을 담는 객체 MethodLog를 만들었다. MethodLog는 addCurrentMethodName라는 메소드를 가지고 있어 실행한 메소드 이름을 자신이 갖고있는 리스트에 추가한다.
+  * 문제: 실행한 메소드 이름을 받는법은 2가지이다. String currentMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 와 String currentMethodName = Thread.currentThread().getStackTrace()[2].getMethodName(); 이 두가지 이다. 두 방법은 성능차이를 보일것 같다. 이것은 테스트 해봐야 안다.
+  
+  
+  
+  
+  
