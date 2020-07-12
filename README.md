@@ -57,7 +57,7 @@
 * TestResult
   * 조건: 테스트의 결과를 출력한다.
   * 결과: 실행횟수랑 실패횟수를 출력한다.
-  * 문제: 계속 늘어나는 TestCaseTest의 메소드를 정리할 필요가 느껴진다. WasRun에서 testBrokenMethod를 만들어 예외를 발생시키고, TestCase의 run에서 throw new RuntimeException을 지우면 assertEquals가 실행이 되지 않아서 결과가 알수없게 되버렸다. Assert.assertEquals("1 run, 99 failed", result.getSummary()); 인데 예외를 발생을 안하고 멈춤 아마 testBrokenMethod이 실행되면 그런듯 하다.
+  * 문제: 계속 늘어나는 TestCaseTest의 메소드를 정리할 필요가 느껴진다. WasRun에서 testBrokenMethod를 만들어 예외를 발생시키고, TestCase의 run에서 throw new RuntimeException을 지우면 assertEquals가 실행이 되지 않아서 결과가 알수없게 되버렸다. Assert.assertEquals("1 run, 99 failed", result.getSummary()); 인데 예외를 발생을 안하고 멈춤 아마 testBrokenMethod이 실행되면서 그런듯 하다.
    
   
   
