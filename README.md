@@ -19,7 +19,9 @@
 
 [X] testFailedResult
 
-[] TestSuite
+[X] TestSuite
+
+[] Test
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
@@ -68,4 +70,7 @@
   * 결과: 에러도 잘 던지고, 실행횟수랑 실패횟수를 출력한다.
   * 문제: 계속 늘어나는 TestCaseTest의 메소드를 정리할 필요가 느껴진다. TestSuite이 필요하다.
   
-  
+* TestSuite
+  * 조건: TestSuite으로 TestCaseTest의 메소드를 정리한다.
+  * 결과: TestCaseTest들이 하나의 TestSuite로 합쳐졌다.
+  * 문제: TestSuite에 suite을 넣을수 있는 컴포지트 패턴으로 인터페이스가 필요하다.

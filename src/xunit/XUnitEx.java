@@ -2,11 +2,9 @@ package xunit;
 
 public class XUnitEx {
 	public static void main(String[] args) {
+		TestSuite suite = TestCaseTest.suite();
 		TestResult result = new TestResult();
-		new TestCaseTest("testTemplateMethod").run(result);
-		new TestCaseTest("testStopWatchWasRun").run(result);
-		new TestCaseTest("testTestResult").run(result);
-		new TestCaseTest("testFailedResultFormatting").run(result);
-		new TestCaseTest("testFailedResult").run(result);
-	}
+		suite.run(result);
+		System.out.println(result.getSummary());
+	}   
 }

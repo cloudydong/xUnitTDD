@@ -3,7 +3,7 @@ package xunit;
 public class TestResult {
     int runCount;
     int failedCount;
-
+    
 	public void testStarted(){
         this.runCount++;
     }
