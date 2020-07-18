@@ -15,6 +15,11 @@ public class WasRun extends TestCase {
 		methodLog.addCurrentMethodName();
 	}
 	
+	public void brokenMethod() {
+		methodLog.addCurrentMethodName();
+		throw new RuntimeException("unconditionally failed Method");
+	}
+	
 	@Override
 	public void setUp() {
 		methodLog.addCurrentMethodName();

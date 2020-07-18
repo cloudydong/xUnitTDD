@@ -7,5 +7,6 @@ public class XUnitEx {
 		new TestCaseTest("testStopWatchWasRun").run(result);
 		new TestCaseTest("testTestResult").run(result);
 		new TestCaseTest("testFailedResultFormatting").run(result);
+		new TestCaseTest("testFailedResult").run(result);
 	}
 }

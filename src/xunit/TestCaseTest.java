@@ -1,5 +1,7 @@
 package xunit;
 
+import java.lang.reflect.Method;
+
 public class TestCaseTest extends TestCase {
 
 	public TestCaseTest(String testMethodName) {
@@ -27,13 +29,32 @@ public class TestCaseTest extends TestCase {
 		result.testFailed();
 		Assert.assertEquals("1 run, 1 failed", result.getSummary());
 	}
+
+	public void testFailedResult() {
+		TestResult result = new TestResult();
+		WasRun wasRun = new WasRun("brokenMethod");
+		wasRun.run(result);
+		Assert.assertEquals("1 run, 1 failed", result.getSummary());
+	}
 	
 	public void testStopWatchWasRun() {
 		TestResult result = new TestResult();
 		long time = System.currentTimeMillis();
-		for(int i = 0; i<1000; i++)
+		for(int i = 0; i<100; i++)
 			new WasRun("executeWasRun").run(result);
 		time = System.currentTimeMillis() - time;
 		System.out.println("WasRunX1000: " + time);
+	}
+	
+	@Override
+	public void run(TestResult result) {
+		setUp();
+		try {
+			Method method = getClass().getMethod(testMethodName);
+			method.invoke(this);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		tearDown();
 	}
 }
