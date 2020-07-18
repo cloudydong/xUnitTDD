@@ -3,11 +3,11 @@ package xunit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSuite {
+public class TestSuite implements Test {
 
-	List<TestCase> tests = new ArrayList<TestCase>();
+	List<Test> tests = new ArrayList<Test>();
 
-	public void add(TestCase testCase) {
+	public void add(Test testCase) {
 		tests.add(testCase);
 	}
 

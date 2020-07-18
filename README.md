@@ -21,7 +21,9 @@
 
 [X] TestSuite
 
-[] Test
+[X] Test
+
+[] refac:TestSuite
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
@@ -74,3 +76,10 @@
   * 조건: TestSuite으로 TestCaseTest의 메소드를 정리한다.
   * 결과: TestCaseTest들이 하나의 TestSuite로 합쳐졌다.
   * 문제: TestSuite에 suite을 넣을수 있는 컴포지트 패턴으로 인터페이스가 필요하다.
+
+* Test
+  * 조건: TestSuite에 TestCaseTest를 넣고 suite도 넣을수 있게만든다.
+  * 결과: Test 인터페이스를 만들고 구현체를 TestCase와 TestSuite으로 설정하여 됬다.
+  * 문제: 메소드앞에 test를 붙인 관례를 이용하여 코드를 더 줄인다.
+  
+  
