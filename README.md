@@ -23,7 +23,7 @@
 
 [X] Test
 
-[] refac:TestSuite
+[] refacTestSuite
 ## Branch
 > 각 단계별로 브랜치를 나눕니다.
 
